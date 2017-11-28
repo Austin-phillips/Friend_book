@@ -1,0 +1,14 @@
+<h1>Contact list</h1>
+<hr />
+
+  <% if @People.any?%>
+    <% @People.each do |person| %>
+      <p><%= link_to person.name, person_path(person)%>
+  <% end %>
+  <% else %>
+    <p>Sorry, you dont have any friends</p>
+  <% end %>
+  <hr />
+
+  <%= link_to 'Create New Contact', new_person_path%>
+

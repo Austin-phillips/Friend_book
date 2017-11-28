@@ -1,0 +1,14 @@
+<h1>Contact Name: <%= @Person.name %></h1>
+<hr />
+<p>Phone Number: <%= @Person.phone %></p>
+<p>Age: <%= @Person.age %></p>
+<p>Hair Color: <%= @Person.hair_color %></p>
+<p>Eye Color: <%= @Person.eye_color %></p>
+<p>Gender: <%= @Person.gender %></p>
+<p>Are they alive? <%= @Person.alive %></p>
+
+<%= link_to 'Back to Contact List', people_path %>
+<%= link_to 'Update', edit_person_path(@Person)%>
+<%= link_to 'Delete', person_path(@Person),
+method: :delete,
+data: {confirm: "Really Delete?"} %>

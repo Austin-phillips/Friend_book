@@ -1,0 +1,29 @@
+<h1>Create New Contact:</h1>
+<p>Please fill out the contact information:</p>
+
+<%= form_for @Person do |f| %>
+  <%= f.label :'Full Name' %>
+  <%= f.text_field :name %>
+  <br />
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  <br />
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  <br />
+  <%= f.label :hair_color %>
+  <%= f.select :hair_color, ['Blonde','Black','Brown','Red'] %>
+  <br />
+  <%= f.label :eye_color %>
+  <%= f.select :eye_color, ['Brown','Blue','Green'] %>
+  <br />
+  <%= f.label :gender %>
+  <%= f.select :gender, ['Male','Female'] %>
+  <br />
+  <%= f.label :'Are They Alive' %>
+  <%= f.check_box :alive %>
+  <br />
+  <%= f.submit :'Create Contact' %>
+<% end %>
+
+<%= link_to 'Cancel', people_path(), data: {confirm: "Are you sure you want to cancel?"} %>
