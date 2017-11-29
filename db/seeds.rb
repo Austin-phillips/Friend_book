@@ -5,10 +5,29 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+def get_random()
+  case rand(100) + 1
+    when  1..50   then 'Male'
+    when 50..100   then 'Female'
+  end
+end
+
+haircolor = ['Brown', 'Blonde', 'Black', 'Red']
+eyecolor = ['Brown', 'Blue', 'Green', 'Hazel']
+
 def cc(name, age, hair_color, eye_color, gender, phone, alive)
   Person.create(name: name, age: age, hair_color: hair_color, eye_color: eye_color, gender: gender, phone: phone, alive: alive)
 end
 
-cc('Austin Phillips',20,'Brown','Green','Male','801-979-9638', true)
-cc('Jaiden Kallas',19,'Black','Brown','Female','801-707-7849', true)
-cc('Alex Cortez',19,'Brown','Green','Male','801-707-6833', true)
+30.times do
+cc(Faker::Name.name,
+Faker::Number.between(18, 45),
+hair_color = haircolor.sample,
+eye_color = eyecolor.sample,
+get_random(),
+Faker::PhoneNumber.phone_number,
+ true)
+end
